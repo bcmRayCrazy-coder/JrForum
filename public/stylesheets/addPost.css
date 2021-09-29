@@ -19,6 +19,15 @@ input {
     border: 1px solid #222222;
 }
 
+textarea {
+    margin: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid #222222;
+    background-color: #222222;
+    color: white;
+}
+
+
 /* h1.title {
     color: white;
 }
