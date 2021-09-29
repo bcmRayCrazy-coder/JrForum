@@ -1,0 +1,119 @@
+{
+    "0": {
+        "nickname": "bcmray",
+        "id": 0,
+        "password": "qQZEnVdp+nNh1+zGqj9tKA==",
+        "descript": "我是管理员hhh",
+        "owns": {
+            "coin": 999,
+            "level": 2,
+            "arch": [
+                0
+            ]
+        }
+    },
+    "1": {
+        "nickname": "ItzJerry",
+        "id": 1,
+        "password": "gdyb21LQTcIANtvYMT7QVQ==",
+        "descript": "小小的开发者",
+        "owns": {
+            "coin": 114514,
+            "level": 233,
+            "arch": [
+                0
+            ]
+        }
+    },
+    "2": {
+        "nickname": "ray小号",
+        "id": 2,
+        "password": "NmBEEahdsr2el+Ir+1tpLQ==",
+        "descript": "对方还没有设置简介呢",
+        "owns": {
+            "coin": 0,
+            "level": 1,
+            "arch": [
+                0
+            ]
+        }
+    },
+    "3": {
+        "nickname": "林深时见鹿",
+        "id": 3,
+        "password": "ZSLvzDJEKPXyLNS4RS4q4w==",
+        "descript": "对方还没有设置简介呢",
+        "owns": {
+            "coin": 0,
+            "level": 1,
+            "arch": [
+                0
+            ]
+        }
+    },
+    "4": {
+        "nickname": "ItzJerry小号",
+        "id": 4,
+        "password": "gdyb21LQTcIANtvYMT7QVQ==",
+        "descript": "对方还没有设置简介呢",
+        "owns": {
+            "coin": 0,
+            "level": 1,
+            "arch": [
+                0
+            ]
+        }
+    },
+    "5": {
+        "nickname": "ItzJerry小号的小号",
+        "id": 5,
+        "password": "gdyb21LQTcIANtvYMT7QVQ==",
+        "descript": "对方还没有设置简介呢",
+        "owns": {
+            "coin": 0,
+            "level": 1,
+            "arch": [
+                0
+            ]
+        }
+    },
+    "6": {
+        "nickname": "傻逼",
+        "id": 6,
+        "password": "QUx61VYl8okANhN2REigVQ==",
+        "descript": "对方还没有设置简介呢",
+        "owns": {
+            "coin": 0,
+            "level": 1,
+            "arch": [
+                0
+            ]
+        }
+    },
+    "7": {
+        "nickname": "傻逼",
+        "id": 7,
+        "password": "QUx61VYl8okANhN2REigVQ==",
+        "descript": "对方还没有设置简介呢",
+        "owns": {
+            "coin": 0,
+            "level": 1,
+            "arch": [
+                0
+            ]
+        }
+    },
+    "8": {
+        "nickname": "BoxWorld",
+        "id": 8,
+        "password": "TqpHVjUovvTa5rbnQ/cPYA==",
+        "descript": "对方还没有设置简介呢",
+        "owns": {
+            "coin": 0,
+            "level": 1,
+            "arch": [
+                0
+            ]
+        }
+    }
+}

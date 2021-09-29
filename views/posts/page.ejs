@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="/images/forum.ico" type="image-x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../stylesheets/page.css">
+</head>
+
+<body class="mdui-theme-layout-dark">
+    <!-- 导航 -->
+    <nav id="top" class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="/home">jrForum</a>
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">主页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">设置</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  话题
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/posts/news">热门/推荐</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=1">游戏</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=2">吐槽</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=3">美术</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=4">建议</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=5">求助</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=6">音乐</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=7">讨论</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=8">其他</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="descriptions">
+        <h1>
+            <%= post.title %>
+        </h1>
+        <h3>主题:
+            <%= post.topic %>
+                <br> 作者:
+                <%= post.user.nickname %>
+        </h3>
+    </div>
+    <div class="replies">
+        <p class="mainContent">
+            <%= post.user.nickname %>:
+                <%= post.content %>
+        </p>
+        
+        <br>回帖<br>
+        <ul style="list-style-type: none;">
+            <% post.reply.forEach((reply)=>{ %>
+                <li>
+                    <%= reply.content %>
+                        <br> 发布者:
+                        <%= reply.user.nickname %>
+                    <div class="mdui-divider-light"></div>
+                </li>
+                <% }) %>
+        </ul>
+        <br>
+        <form action="/api/reply" method="post">
+            <input type="number" style="display: none;" value="<%= post.id %>" name="postId">
+            <input type="text" name="content" placeholder="回复的内容" minlength="2">
+            <button type="submit" class="mdui-btn mdui-ripple mdui-color-green">回帖</button>
+        </form>
+    </div>
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+/* body {
+    background-color: rgb(31, 29, 29);
+    color: black;
+} */
+
+#thing {
+    width: 600px;
+    height: 300px;
+    overflow: scroll;
+}
+
+#title {
+    text-shadow: #222222 1px 1px 1px;
+}
+
+input {
+    margin: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid #222222;
+}
+
+/* h1.title {
+    color: white;
+}
+
+p.bk {
+    color: white;
+} */

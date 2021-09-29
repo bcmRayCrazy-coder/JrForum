@@ -1,0 +1,65 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image:url(/images/rainBg.svg);
+}
+
+a {
+    color: #00B7FF;
+    text-decoration: solid;
+    transition: color 0.5s;
+}
+
+a:hover {
+    color: #0084ff;
+}
+
+.des {
+    background: url(/images/indexTitleMash.png);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation-name: masked-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-animation-name: masked-animation;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-animation-name: masked-animation;
+    -moz-animation-duration: 10s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    font-size: 10rem;
+}
+
+@-webkit-keyframes masked-animation {
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: right bottom;
+    }
+}
+
+@-moz-keyframes masked-animation {
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: right bottom;
+    }
+}
+
+@keyframes masked-animation {
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: right bottom;
+    }
+}

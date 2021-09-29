@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="/images/forum.ico" type="image-x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/addPost.css">
+</head>
+
+<body class="mdui-theme-layout-dark">
+    <h1 class="title">发布帖子</h1>
+    <form action="/api/postPost" method="post">
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">标题</label>
+            <input class="mdui-textfield-input" name="title" type="text" minlength="2" maxlength="30" />
+        </div>
+        <br>
+        <!-- <input type="text" name="content" id="thing" placeholder="内容" minlength="5" required> -->
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">内容</label>
+            <input class="mdui-textfield-input" name="content" type="text" minlength="5" maxlength="114514" />
+        </div>
+        <br>
+        <p class="bk">板块</p>
+        <select class="mdui-select" name="topic" mdui-select>
+            <option value="1">吐槽</option>
+            <option value="2">游戏</option>
+            <option value="3">美术</option>
+            <option value="4">建议</option>
+            <option value="5">求助</option>
+            <option value="6">音乐</option>
+            <option value="7">讨论</option>
+            <option value="8">其他</option>
+        </select>
+        <br>
+        <button type="reset" class="mdui-btn mdui-ripple mdui-color-red">重写</button>
+        <button type="submit" id="submit" class="mdui-btn mdui-ripple mdui-color-green">提交</button>
+        <a href="/home" type="button" class="mdui-btn mdui-ripple mdui-color-yellow">返回主页</a>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
+</body>
+
+</html>

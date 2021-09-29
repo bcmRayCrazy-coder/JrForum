@@ -1,0 +1,90 @@
+body {
+    background-color: rgb(31, 28, 28);
+    color: black;
+}
+
+p.main-title {
+    color: white;
+    position: absolute;
+    left: 47%;
+}
+
+div.postthing {
+    position: absolute;
+    top: 32%;
+    width: 100%;
+}
+
+p.author {
+    color: white;
+}
+
+li.apost {
+    width: 1000px;
+}
+
+
+/* #qq {
+    position: absolute;
+    top: 110%;
+    left: 89%;
+} */
+
+footer {
+    text-align: center;
+    display: block;
+    position: fixed;
+    left: 90%;
+    top: 30%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(40, 43, 46);
+    border: 1px solid grey;
+    border-radius: 25px;
+    overflow: scroll;
+}
+
+footer a {
+    color: #F2F248;
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 5px;
+    text-align: center;
+}
+
+#navbarlogin {
+    position: absolute;
+    left: 92%;
+}
+
+
+/* img.contain-img {
+    width: 100%;
+    filter: blur(7px);
+} */
+
+
+/* div.container {
+    border: 5px solid grey;
+    border-radius: 25px;
+} */
+
+h2.contain-welcome {
+    position: absolute;
+    left: 35%;
+    top: 15%;
+}
+
+
+/* div.updates {
+    position: fixed;
+    text-align: center;
+    left: 89%;
+    color: white;
+    top: 60%;
+    background-color: rgb(40, 43, 46);
+    border: 2px solid grey;
+    border-radius: 25px;
+    overflow: scroll;
+} */
