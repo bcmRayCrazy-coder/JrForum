@@ -14,12 +14,18 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
     <link rel="stylesheet" href="/stylesheets/addPost.css">
+
 </head>
 
 <body class="mdui-theme-layout-dark">
     <h1 class="title">发布帖子</h1>
-    <form action="/api/postPost" method="post">
+    <!-- <form action="/api/postPost" method="post"> -->
+    <div id="post">
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">标题</label>
             <input class="mdui-textfield-input" name="title" type="text" minlength="2" maxlength="30" />
@@ -33,20 +39,16 @@
         <br>
         <p class="bk">板块</p>
         <select class="mdui-select" name="topic" mdui-select>
-            <option value="1">吐槽</option>
-            <option value="2">游戏</option>
-            <option value="3">美术</option>
-            <option value="4">建议</option>
-            <option value="5">求助</option>
-            <option value="6">音乐</option>
-            <option value="7">讨论</option>
-            <option value="8">其他</option>
+            <option v-bind:value=t[0] v-for="t in topics">{{t[1]}}</option>
         </select>
         <br>
         <button type="reset" class="mdui-btn mdui-ripple mdui-color-red">重写</button>
         <button type="submit" id="submit" class="mdui-btn mdui-ripple mdui-color-green">提交</button>
         <a href="/home" type="button" class="mdui-btn mdui-ripple mdui-color-yellow">返回主页</a>
-    </form>
+        <!-- </form> -->
+    </div>
+
+    <script src="/javascripts/addPost.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
 </body>
 
