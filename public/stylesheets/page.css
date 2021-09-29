@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(31, 29, 29);
+    color: black;
+}
+
+/* h1 {
+    text-align: center;
+    position: absolute;
+    left: 45%;
+} */
+
+div.descriptions {
+    text-align: center;
+    position: absolute;
+    left: 45%;
+    color: white;
+}
+
+p.mainContent{
+    color: white;
+    position: absolute;
+    top: auto;
+    width: 500%;
+}
+
+div.replies {
+    color: white;
+    position: absolute;
+    top: 30%;
+}

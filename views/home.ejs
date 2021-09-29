@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ray去吃屎了 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/images/forum.ico" type="image-x-icon">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheets/home.css">
+</head>
+
+<body class="mdui-theme-layout-dark">
+    <!-- 我们的旅程从这里开始 -->
+    <script src="/javascripts/home.js"></script>
+
+    <!-- 导航 -->
+    <nav id="top" class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">JrForum</a>
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">主页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">设置</a>
+            </li>
+            <p id="navbarlogin" class="main-title text-sucess" style="<%= showL %>">欢迎，
+                <%= userData.nickname %>！
+            </p>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  话题
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/posts/news">热门/推荐</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=games">游戏</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=fucks">吐槽</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=arts">美术</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=suggests">建议</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=helps">求助</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=musics">音乐</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=chats">讨论</a>
+                    <a class="dropdown-item" href="/posts/news?by=topic&topic=others">其他</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- <div class="container">
+        <img class="contain-img" src="/images/indexTitleMash.png" />
+    </div> -->
+    <h2 class="contain-welcome">欢迎来到JrForum!</h2>
+    <!--主页-->
+    <div class="main">
+        <p class="main-title text-warning" style="<%= unshowL %>">游客,请登录</p>
+    </div>
+    <!-- 操作 -->
+    <div class="announcement">
+        <p>公告：本论坛将使用vue.js重新编写，此论坛也可继续使用。</p>
+    </div>
+    <div class="postthing">
+        <a href="/users/" class="btn btn-outline-primary" role="button" style="<%= unshowL %>">登录/注册</a>
+        <a href="/posts/addPost" class="mdui-btn mdui-ripple mdui-color-blue role=button" style="<%= showL %>">发布帖子</a>
+        <!-- 推荐 -->
+        <div class="send">
+            <ul>
+                <% postList.forEach((post)=>{ %>
+                    <li style="list-style:none;" class="apost">
+                        <a href="/posts/id/<%= post.id %>">
+                            <%= post.title %> -作者:
+                                <%= post.user.nickname %>
+                                    <p class="author"></p>
+                        </a>
+                        <div class="mdui-divider-light"></div>
+                    </li>
+                    <% }) %>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <a id="qq" target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=i4NF0S3QgdjhwlCLmYJFczpYHC5AI1kx&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JrForum基地" title="JrForum基地"></a>
+        <p>JrForum论坛
+            <br>by
+            <a href="https://itzjerry.top:8080">ItzJerry</a> and bcm-ray_crazy
+            <br>thanks!<br>
+            <a href="http://gov.org.网站:12345/icp/?search=itzjerry.top">水站联盟202109232208</a>
+            <br><a href="https://icp.gov.moe/?keyword=20210053" target="_blank">萌ICP备20210053号</a><br>
+            <a style="color: white;" href="#top">↑回到顶部↑</a>
+            <br><a onclick="credits()" class="mdui-btn mdui-ripple mdui-color-green role=button">[查看制作者名单]</a></p>
+
+        <div class="updates">
+            <p>
+                <b>1.2.0pre3更新内容：</b>
+                <br>bug处理
+                <br>更多板块
+                <br>深色模式完全覆盖
+                <br>右侧更新面板与右侧感谢名单
+                <br>制作者名单
+                <br>css更新
+                <br>1.2.0更新内容预告：
+                <br>头像上传
+                <br>bug修复
+                <br>当前版本：1.2.0pre3</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
+</body>
+
+</html>
