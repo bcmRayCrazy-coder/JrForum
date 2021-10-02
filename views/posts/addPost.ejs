@@ -28,22 +28,18 @@
     <div id="post">
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">标题</label>
-            <input class="mdui-textfield-input" name="title" type="text" minlength="2" maxlength="30" />
+            <input class="mdui-textfield-input" name="title" type="text" minlength="2" v-model="title" maxlength="30" />
         </div>
         <br>
-        <!-- <input type="text" name="content" id="thing" placeholder="内容" minlength="5" required> -->
-        <div class="mdui-textfield mdui-textfield-floating-label">
-            <label class="mdui-textfield-label">内容</label>
-            <input class="mdui-textfield-input" name="content" type="text" minlength="5" maxlength="114514" />
-        </div>
+        <textarea type="text" name="content" id="thing" placeholder="内容" minlength="5" v-model="content" required></textarea>
         <br>
         <p class="bk">板块</p>
-        <select class="mdui-select" name="topic" mdui-select>
+        <select class="mdui-select" name="topic" v-model="topic" mdui-select>
             <option v-bind:value=t[0] v-for="t in topics">{{t[1]}}</option>
         </select>
         <br>
-        <button type="reset" class="mdui-btn mdui-ripple mdui-color-red">重写</button>
-        <button type="submit" id="submit" class="mdui-btn mdui-ripple mdui-color-green">提交</button>
+        <!-- <button type="reset" class="mdui-btn mdui-ripple mdui-color-red">重写</button> -->
+        <button type="submit" id="submit" class="mdui-btn mdui-ripple mdui-color-green" v-on:click="submit">提交</button>
         <a href="/home" type="button" class="mdui-btn mdui-ripple mdui-color-yellow">返回主页</a>
         <!-- </form> -->
     </div>

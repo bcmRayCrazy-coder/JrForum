@@ -111,16 +111,16 @@ router.post('/postPost', function(req, res, next) {
                 }
             }
             if (!userData.login) {
-                res.redirect('/home');
+                res.send({ err: true, msg: '重新登录' });
                 return;
             }
             var postData = api.addPost(dt.title, dt.content, userData, dt.topic);
-            res.render('back/postSucess', { title: 'jrForum', postData })
+            res.send(postData);
         } else {
-            res.redirect('/home');
+            res.send({ err: true, msg: '无效登录' });
         }
     } else {
-        res.redirect('/home');
+        res.send({ err: true, msg: '未登录' });
     }
 });
 
@@ -150,7 +150,7 @@ router.post('/reply', function(req, res, next) {
                 return;
             }
             var replyData = api.replyPost(dt.postId, dt.content, userData);
-            res.status(200).write('回帖成功!'); 
+            res.status(200).write('回帖成功!');
             res.end();
         } else {
             res.status(200).write('您还没有登录呢……');
