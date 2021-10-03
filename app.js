@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 var postsRouter = require('./routes/posts');
+var thirdPartyRouter = require('./routes/third_party');
 
 var app = express();
 
@@ -38,11 +39,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 app.use('/posts', postsRouter);
+app.use('/third_party', thirdPartyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     // next(createError(404));
-    res.render("back/404", { path: req.url, title: 'jrForum' });
+    res.status(404).render("back/404", { path: req.url, title: 'jrForum' });
 });
 
 // error handler
