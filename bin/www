@@ -6,8 +6,8 @@
 // Configuare https
 const fs = require("fs");
 const httpsOption = {
-    key: fs.readFileSync(__dirname + "/2021092101_29.key"),
-    cert: fs.readFileSync(__dirname + "/2021092101_29.pem")
+    key: fs.readFileSync(__dirname + "/logou.xyz.key"),
+    cert: fs.readFileSync(__dirname + "/logou.xyz.pem")
 }
 
 /**
