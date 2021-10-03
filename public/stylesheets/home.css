@@ -5,13 +5,11 @@ body {
 
 p.main-title {
     color: white;
-    position: absolute;
     left: 47%;
 }
 
-div.postthing {
-    position: absolute;
-    top: 32%;
+.postthing {
+    margin: 30px 30px;
     width: 100%;
 }
 
@@ -71,9 +69,8 @@ footer p {
 } */
 
 h2.contain-welcome {
-    position: absolute;
-    left: 35%;
-    top: 15%;
+    width: 100%;
+    text-align: center;
 }
 
 
@@ -88,3 +85,7 @@ h2.contain-welcome {
     border-radius: 25px;
     overflow: scroll;
 } */
+
+.send {
+    margin-top: 30px;
+}

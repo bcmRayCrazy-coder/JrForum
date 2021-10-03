@@ -65,9 +65,6 @@
         <p class="main-title text-warning" style="<%= unshowL %>">游客,请登录</p>
     </div>
     <!-- 操作 -->
-    <div class="announcement">
-        <p>公告：本论坛将使用vue.js重新编写，此论坛也可继续使用。</p>
-    </div>
     <div class="postthing">
         <a href="/users/" class="btn btn-outline-primary" role="button" style="<%= unshowL %>">登录/注册</a>
         <a href="/posts/addPost" class="mdui-btn mdui-ripple mdui-color-blue role=button" style="<%= showL %>">发布帖子</a>
@@ -113,6 +110,18 @@
                 <br>当前版本：1.2.0pre3</p>
         </div>
     </footer>
+
+    <!-- 对话框 -->
+    <div class="mdui-dialog" id="cDialog">
+        <div class="mdui-dialog-title">制作者名单</div>
+        <div class="mdui-dialog-content">bcm-ray_crazy
+            <br>ItzJerry
+        </div>
+        <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>关闭</button>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
 </body>
 
