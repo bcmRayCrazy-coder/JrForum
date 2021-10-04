@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const crypto = require('crypto');
 var md5 = (data) => {
     // 以md5的格式创建一个哈希值
@@ -28,7 +29,8 @@ var addUsers = (name, pwd) => {
             coin: 0,
             level: 1,
             arch: [0]
-        }
+        },
+        avator_url: "/images/users/default.png"
     };
     u[String(num + 1)] = userData;
     let data = JSON.stringify(u, null, 4);
@@ -82,6 +84,19 @@ var signVer = (sign) => {
     }
     return { ver: false }
 }
+var setUserAvatar = (id, img) => {
+    var type = img.split(',')[0].split('/')[1].split(';')[0];
+    var avatarUrl = `/images/users/id_${id}_avatar.${type}`;
+    var savePath = path.join(__dirname, `../public${avatarUrl}`);
+    var u = getUsers();
+
+    u[String(id)].avator_url = avatarUrl;
+
+    fs.writeFileSync(__dirname + '/users.json', JSON.stringify(u, null, 4));
+    fs.writeFile(savePath, img, (err) => {
+        return { err: err, avatarUrl };
+    });
+}
 module.exports = {
     getUsers,
     getPosts,
@@ -90,5 +105,6 @@ module.exports = {
     signUser,
     signVer,
     replyPost,
+    setUserAvatar,
     md5
 }

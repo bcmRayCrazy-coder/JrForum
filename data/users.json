@@ -10,7 +10,8 @@
             "arch": [
                 0
             ]
-        }
+        },
+        "avator_url": "/images/users/id_0_avatar.png"
     },
     "1": {
         "nickname": "ItzJerry",
@@ -23,7 +24,8 @@
             "arch": [
                 0
             ]
-        }
+        },
+        "avator_url": "/images/users/default.png"
     },
     "2": {
         "nickname": "ray小号",
@@ -36,7 +38,8 @@
             "arch": [
                 0
             ]
-        }
+        },
+        "avator_url": "/images/users/default.png"
     },
     "3": {
         "nickname": "林深时见鹿",
@@ -62,7 +65,8 @@
             "arch": [
                 0
             ]
-        }
+        },
+        "avator_url": "/images/users/default.png"
     },
     "5": {
         "nickname": "ItzJerry小号的小号",
@@ -75,7 +79,8 @@
             "arch": [
                 0
             ]
-        }
+        },
+        "avator_url": "/images/users/default.png"
     },
     "6": {
         "nickname": "傻逼",
@@ -88,7 +93,8 @@
             "arch": [
                 0
             ]
-        }
+        },
+        "avator_url": "/images/users/default.png"
     },
     "7": {
         "nickname": "傻逼",
@@ -101,7 +107,8 @@
             "arch": [
                 0
             ]
-        }
+        },
+        "avator_url": "/images/users/default.png"
     },
     "8": {
         "nickname": "BoxWorld",
@@ -114,6 +121,7 @@
             "arch": [
                 0
             ]
-        }
+        },
+        "avator_url": "/images/users/default.png"
     }
 }

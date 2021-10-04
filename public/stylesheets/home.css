@@ -3,9 +3,26 @@ body {
     color: black;
 }
 
-p.main-title {
+.main-title {
+    position: absolute;
     color: white;
-    left: 47%;
+    left: 90%;
+    /* float: right; */
+}
+
+.main-title img {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 0px solid #126dff;
+    transition: border 0.5s;
+}
+
+.main-title img:hover {
+    border: 3px solid #126dff;
 }
 
 .postthing {
@@ -56,18 +73,6 @@ footer p {
     left: 92%;
 }
 
-
-/* img.contain-img {
-    width: 100%;
-    filter: blur(7px);
-} */
-
-
-/* div.container {
-    border: 5px solid grey;
-    border-radius: 25px;
-} */
-
 h2.contain-welcome {
     width: 100%;
     text-align: center;
@@ -88,4 +93,14 @@ h2.contain-welcome {
 
 .send {
     margin-top: 30px;
+}
+
+.pBtn {
+    background-color: #126dff;
+    color: #ffffff;
+}
+
+.navbar {
+    background-color: #126dff;
+    color: #ffffff;
 }

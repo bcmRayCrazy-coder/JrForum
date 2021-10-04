@@ -25,7 +25,7 @@
     <script src="/javascripts/home.js"></script>
 
     <!-- 导航 -->
-    <nav id="top" class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav id="top" class="navbar navbar-expand-sm navbar-dark">
         <a class="navbar-brand" href="#">JrForum</a>
         <!-- Links -->
         <ul class="navbar-nav">
@@ -33,11 +33,14 @@
                 <a class="nav-link" href="#">主页</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">设置</a>
+                <a class="nav-link" href="/users/settings">设置</a>
             </li>
-            <p id="navbarlogin" class="main-title text-sucess" style="<%= showL %>">欢迎，
-                <%= userData.nickname %>！
-            </p>
+            <div class="main-title" style="<%= showL %>">
+                <img src="<%= userData.avator_url %>" alt="头像">
+                <p id="navbarlogin" class="text-sucess">
+                    <%= userData.nickname %>
+                </p>
+            </div>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                   话题
@@ -56,9 +59,6 @@
             </li>
         </ul>
     </nav>
-    <!-- <div class="container">
-        <img class="contain-img" src="/images/indexTitleMash.png" />
-    </div> -->
     <h2 class="contain-welcome">欢迎来到JrForum!</h2>
     <!--主页-->
     <div class="main">
@@ -93,21 +93,19 @@
             <a href="http://gov.org.网站:12345/icp/?search=itzjerry.top">水站联盟202109232208</a>
             <br><a href="https://icp.gov.moe/?keyword=20210053" target="_blank">萌ICP备20210053号</a><br>
             <a style="color: white;" href="#top">↑回到顶部↑</a>
-            <br><a onclick="credits()" class="mdui-btn mdui-ripple mdui-color-green role=button">[查看制作者名单]</a></p>
+            <br><a onclick="credits()" class="mdui-btn mdui-ripple role=button pBtn">[查看制作者名单]</a></p>
 
         <div class="updates">
             <p>
-                <b>1.2.0pre3更新内容：</b>
-                <br>bug处理
+                <b>1.1.6更新内容：</b>
                 <br>更多板块
-                <br>深色模式完全覆盖
-                <br>右侧更新面板与右侧感谢名单
+                <br>深颜色完全覆盖
+                <br>更新与感谢名单
                 <br>制作者名单
-                <br>css更新
+                <br>新的样式
                 <br>1.2.0更新内容预告：
                 <br>头像上传
-                <br>bug修复
-                <br>当前版本：1.2.0pre3</p>
+                <br>当前版本：1.1.6</p>
         </div>
     </footer>
 

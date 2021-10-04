@@ -162,6 +162,48 @@ router.post('/reply', function(req, res, next) {
         res.end();
         return;
     }
+});
+
+router.post('/avator', (req, res) => {
+    var session = req.session;
+    var userData = { login: false };
+    res.setHeader('Content-type', 'text/plain; charset=utf-8');
+    if (session.login) {
+        var sgn = session.logSign;
+        var code = api.signVer(sgn);
+        if (code.ver) {
+            var userList = api.getUsers();
+            for (const checkingUser in userList) {
+                if (Object.hasOwnProperty.call(userList, checkingUser)) {
+                    const e = userList[checkingUser];
+                    if (e.id == code.id) {
+                        userData = e;
+                        userData.login = true;
+                    }
+                }
+            }
+            if (!userData.login) {
+                res.status(200).json({ err: true, msg: '未登录' });
+                res.end();
+                return;
+            }
+            var image = "";
+            for (const i in req.body) {
+                image = i;
+            }
+            var b = api.setUserAvatar(userData.id, image);
+            res.status(200).json({ err: false, msg: '成功!' });
+            res.end();
+        } else {
+            res.status(200).json({ err: true, msg: '未登录', b });
+            res.end();
+            return;
+        }
+    } else {
+        res.status(200).write('您还没有登录呢……');
+        res.end();
+        return;
+    }
 })
 
 module.exports = router;
