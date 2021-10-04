@@ -102,3 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# 论坛数据
+data/posts.json
+
+# 用户数据
+data/users.json
+public/images/users/*
