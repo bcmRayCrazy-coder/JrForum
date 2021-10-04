@@ -10,6 +10,11 @@ router.get('/', function(req, res, next) {
     res.render('users/login', { title: 'jrForum', api: UsersApiUrl, navBar });
 });
 
+/* GET users settings listing. */
+router.get('/settings', function(req, res, next) {
+    res.render('users/settings', { title: 'jrForum', api: UsersApiUrl, navBar });
+});
+
 /* GET login listing. */
 router.get('/login', function(req, res, next) {
     res.render('users/login', { title: 'jrForum', api: UsersApiUrl, navBar });

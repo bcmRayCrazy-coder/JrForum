@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置
+        <%= title %>
+    </title>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div id="iS">
+        <h4>更改头像</h4>
+        <img v-bind:src="uip" alt="上传头像">
+        <input type="file" name="avatar" accept="image/gif,image/jpeg,image/jpg,image/png" ref="avatarInput" v-on:change="changeImage($event)">
+        <button v-on:click="uplUImg">上传</button>
+    </div>
+
+    <script src="/javascripts/settings.js"></script>
+</body>
+
+</html>
