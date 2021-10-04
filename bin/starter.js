@@ -3,6 +3,7 @@ const chalk = require("chalk");
 const fs = require('fs');
 const path = require("path");
 const e = require("express");
+const { join } = require("path");
 
 var ui = new inquirer.ui.BottomBar();
 
@@ -86,6 +87,27 @@ function runForum() {
     }
 }
 
+function resetForum() {
+    console.log(chalk.red('正在重置数据...'));
+    console.log();
+    fs.unlink(path.join(__dirname, '../data/users.json'), (err) => {
+        if (err) {
+            console.log(chalk.red('出现错误:'));
+            return console.error(err);
+        }
+        console.log(chalk `文件 {bgBlue.white users.json} 删除成功!`);
+    });
+    fs.unlink(path.join(__dirname, '../data/posts.json'), (err) => {
+        if (err) {
+            console.log(chalk.red('出现错误:'));
+            return console.error(err);
+        }
+        console.log(chalk `文件 {bgBlue.white posts.json} 删除成功!`);
+    });
+    console.log(chalk.hex('#FF66FF')('正在创建文件……'));
+    createFiles();
+}
+
 function init() {
     console.log(chalk.hex('#FF6666')("====请=选=择===="));
     console.log(chalk.bgRgb(242, 103, 12).white("使用 箭头 键选择,使用 enter 键确定"));
@@ -108,6 +130,19 @@ function init() {
 
             case "初始化数据":
                 createFiles();
+                break;
+
+            case "重置所有数据":
+                inquirer.prompt({
+                    type: "confirm",
+                    name: "confirmReset",
+                    message: "你确定要重置吗?",
+                    default: false
+                }).then(({ confirmReset: v }) => {
+                    if (!v) return init();
+                    resetForum();
+                });
+                break;
 
             default:
                 init();
