@@ -11,6 +11,4 @@ To visit our forum: [click here](http://itzjerry.top:233/)
 JrForum是一个论坛社区。正在开发中。  
 
 by
-Itzjerry and bcmRayCrazy-coder  
-
-机器人测试
+Itzjerry and bcmRayCrazy-coder 
