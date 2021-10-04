@@ -108,4 +108,5 @@ data/posts.json
 
 # 用户数据
 data/users.json
+data/userSigns.json
 public/images/users/*
