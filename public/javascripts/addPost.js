@@ -24,23 +24,36 @@ var postPage = new Vue({
                 mdui.alert("不能为空");
                 return;
             }
-            var xmlhttp = new XMLHttpRequest();
-            if (!window.XMLHttpRequest) {
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    var b = xmlhttp.response;
-                    if (b.err) { mdui.alert("发生了错误:\n" + b.err.msg) } else {
-                        window.location.href = "/posts/id/" + String(b.id);
-                    }
+            // var xmlhttp = new XMLHttpRequest();
+            // if (!window.XMLHttpRequest) {
+            //     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            // }
+            // xmlhttp.onreadystatechange = function() {
+            //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //         var b = xmlhttp.response;
+            // if (b.err) { mdui.alert("发生了错误:\n" + b.err.msg) } else {
+            //     window.location.href = "/posts/id/" + String(b.id);
+            // }
+            //     }
+            // }
+            // xmlhttp.open("POST", "/api/postPost", true);
+            // xmlhttp.setRequestHeader('title', title);
+            // xmlhttp.setRequestHeader('topic', topic);
+            // xmlhttp.setRequestHeader('content', content);
+            // xmlhttp.send();
+            axios.post('/api/postPost', {
+                title,
+                topic,
+                content
+            }).then(({ data }) => {
+                if (data.err) { mdui.alert("发生了错误:\n" + data.err.msg) } else {
+                    mdui.alert('发送成功!');
+                    window.location.href = "/posts/id/" + String(data.id);
                 }
-            }
-            xmlhttp.open("POST", "/api/postPost", true);
-            xmlhttp.setRequestHeader('title', title);
-            xmlhttp.setRequestHeader('topic', topic);
-            xmlhttp.setRequestHeader('content', content);
-            xmlhttp.send();
+            }).catch((err) => {
+                mdui.alert('发生错误,请查看console');
+                console.error(err)
+            })
         },
         reset: () => {
             postPage.title = "";
