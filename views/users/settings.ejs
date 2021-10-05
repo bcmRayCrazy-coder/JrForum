@@ -18,13 +18,13 @@
 </head>
 
 <body>
+
     <div id="iS">
-        <h4>更改头像</h4>
-        <img v-bind:src="uip" alt="上传的头像">
+        <h4 id="title">更改头像</h4>
+        <img id="imagealt" v-bind:src="uip" alt="上传的头像">
         <input type="file" name="avatar" accept="image/jpeg,image/jpg,image/png" ref="avatarInput" v-on:change="changeImage($event)">
         <button class="mdui-btn mdui-ripple" v-on:click="uplUImg">上传</button>
     </div>
-    <!-- 还要改名字· -->
 
     <script src="/javascripts/settings.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
