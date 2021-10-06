@@ -11,20 +11,23 @@
 
     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link rel="stylesheet" href="/stylesheets/settings.css">
 </head>
 
 <body>
+
     <div id="iS">
-        <h4>更改头像</h4>
-        <img v-bind:src="uip" alt="上传头像">
-        <input type="file" name="avatar" accept="image/gif,image/jpeg,image/jpg,image/png" ref="avatarInput" v-on:change="changeImage($event)">
-        <button v-on:click="uplUImg">上传</button>
+        <h4 id="title">更改头像</h4>
+        <img id="imagealt" v-bind:src="uip" alt="上传的头像">
+        <input type="file" name="avatar" accept="image/jpeg,image/jpg,image/png" ref="avatarInput" v-on:change="changeImage($event)">
+        <button class="mdui-btn mdui-ripple" v-on:click="uplUImg">上传</button>
     </div>
 
     <script src="/javascripts/settings.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
 </body>
 
 </html>
