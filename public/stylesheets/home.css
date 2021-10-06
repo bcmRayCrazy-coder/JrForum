@@ -18,11 +18,11 @@ body {
     margin-right: 10px;
     cursor: pointer;
     border: 0px solid #126dff;
-    transition: border 0.5s;
+    transition: 0.5s;
 }
 
 .main-title img:hover {
-    border: 3px solid #126dff;
+    transform: scale(1.2);
 }
 
 .postthing {
