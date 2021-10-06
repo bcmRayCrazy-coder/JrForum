@@ -21,6 +21,7 @@
 
     <div id="iS">
         <h4 id="title">更改头像</h4>
+        <div class="mdui-divider-light"></div>
         <img id="imagealt" v-bind:src="uip" alt="上传的头像">
         <input type="file" name="avatar" accept="image/jpeg,image/jpg,image/png" ref="avatarInput" v-on:change="changeImage($event)">
         <button class="mdui-btn mdui-ripple" v-on:click="uplUImg">上传</button>
