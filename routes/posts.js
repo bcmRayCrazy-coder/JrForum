@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var api = require('../data/api');
+const config = require('../config');
 
 /* GET addPost page */
 router.get('/addPost', function(req, res, next) {
@@ -24,7 +25,7 @@ router.get('/addPost', function(req, res, next) {
                 res.redirect('/home');
                 return;
             }
-            res.render('posts/addPost', { title: 'jrForum' });
+            res.render('posts/addPost', { title: config.title });
         }
     } else {
         res.redirect('/home');
@@ -66,7 +67,7 @@ router.get('/id/:id', function(req, res, next) {
         res.end();
         return;
     }
-    res.render('posts/page', { title: 'jrForum', post: use[0] });
+    res.render('posts/page', { title: config.title, post: use[0] });
 });
 
 /* GET news page */
@@ -106,7 +107,7 @@ router.get('/news', function(req, res, next) {
             break;
     }
     console.log(req.query.by);
-    res.render('posts/news', { title: 'jrForum', postList, sortName: req.query.by || '无' });
+    res.render('posts/news', { title: config.title, postList, sortName: req.query.by || '无' });
 })
 
 module.exports = router;

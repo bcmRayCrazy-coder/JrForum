@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 var api = require('../data/api');
 const { navBar } = require('../data/pgs');
+const config = require('../config');
 
 /* GET index page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'JrForum', link: '/home' });
+    res.render('index', { title: config.title, des: config.description, link: '/home' });
 });
 
 /* GET home page. */
@@ -40,7 +41,7 @@ router.get('/home', function(req, res, next) {
             postList.push(e);
         }
     }
-    res.render('home', { title: 'JrForum', navBar, userData, showL, unshowL ,postList});
+    res.render('home', { title: config.title, navBar, userData, showL, unshowL, postList });
 });
 
 module.exports = router;

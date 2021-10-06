@@ -109,6 +109,7 @@ function resetForum() {
 }
 
 function init() {
+    console.log(chalk.hex('#730CF2')("QFLauncher 论坛启动器"))
     console.log(chalk.hex('#FF6666')("====请=选=择===="));
     console.log(chalk.bgRgb(242, 103, 12).white("使用 箭头 键选择,使用 enter 键确定"));
     inquirer.prompt([{

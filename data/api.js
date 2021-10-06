@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { Buffer } = require('buffer');
 var md5 = (data) => {
     // 以md5的格式创建一个哈希值
     let hash = crypto.createHash('md5');
@@ -91,9 +92,13 @@ var setUserAvatar = (id, img) => {
     var u = getUsers();
 
     u[String(id)].avator_url = avatarUrl;
+    // console.log(img);
+
+    var imgFile = new Buffer.from(img.replace(/^data:image\/\w+;base64,/, ""), 'base64');
+
 
     fs.writeFileSync(__dirname + '/users.json', JSON.stringify(u, null, 4));
-    fs.writeFile(savePath, img, (err) => {
+    fs.writeFile(savePath, imgFile, (err) => {
         return { err: err, avatarUrl };
     });
 }

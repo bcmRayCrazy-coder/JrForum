@@ -42,9 +42,9 @@ router.post('/check', function(req, res, next) {
         case "reg":
             if (dt.pas == dt.pasV) {
                 var userData = api.addUsers(dt.name, dt.pas);
-                res.render('back/regSucess', { userData, navBar, title: 'jrForum' });
+                res.render('back/regSucess', { userData, navBar, title: config.title });
             } else {
-                res.render('back/failed', { reason: '两个密码不相符', action: '注册', backUrl: 'reg', title: 'jrForum' });
+                res.render('back/failed', { reason: '两个密码不相符', action: '注册', backUrl: 'reg', title: config.title });
             }
             break;
 
@@ -60,11 +60,11 @@ router.post('/check', function(req, res, next) {
                 }
             }
             if (verUser.n) {
-                res.render('back/failed', { reason: '没有该用户', action: '登录', backUrl: 'login', title: 'jrForum' });
+                res.render('back/failed', { reason: '没有该用户', action: '登录', backUrl: 'login', title: config.title });
                 return;
             }
             if (verUser.password != api.md5(dt.password)) {
-                res.render('back/failed', { reason: '密码错误', action: '登录', backUrl: 'login', title: 'jrForum' });
+                res.render('back/failed', { reason: '密码错误', action: '登录', backUrl: 'login', title: config.title });
                 return;
             }
             req.session.login = true;
@@ -75,7 +75,7 @@ router.post('/check', function(req, res, next) {
             break;
 
         default:
-            res.render('back/failed', { reason: '没有传入任何值', action: '验证', backUrl: 'login', title: 'jrForum' });
+            res.render('back/failed', { reason: '没有传入任何值', action: '验证', backUrl: 'login', title: config.title });
             break;
     }
 });
@@ -84,7 +84,7 @@ router.post('/check', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
     req.session.destroy((err) => {
         if (err) {
-            res.render('back/failed', { reason: err, action: '登出', backUrl: 'login', title: 'jrForum' });
+            res.render('back/failed', { reason: err, action: '登出', backUrl: 'login', title: config.title });
             return;
         }
         res.redirect('/home');

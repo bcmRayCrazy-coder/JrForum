@@ -2,27 +2,28 @@ var express = require('express');
 var router = express.Router();
 const { navBar } = require('../data/pgs');
 const api = require('../data/api.js');
+const config = require('../config');
 
 const UsersApiUrl = '/api/users';
 
 /* GET users login listing. */
 router.get('/', function(req, res, next) {
-    res.render('users/login', { title: 'jrForum', api: UsersApiUrl, navBar });
+    res.render('users/login', { title: config.title, api: UsersApiUrl, navBar });
 });
 
 /* GET users settings listing. */
 router.get('/settings', function(req, res, next) {
-    res.render('users/settings', { title: 'jrForum', api: UsersApiUrl, navBar });
+    res.render('users/settings', { title: config.title, api: UsersApiUrl, navBar });
 });
 
 /* GET login listing. */
 router.get('/login', function(req, res, next) {
-    res.render('users/login', { title: 'jrForum', api: UsersApiUrl, navBar });
+    res.render('users/login', { title: config.title, api: UsersApiUrl, navBar });
 });
 
 /* GET users register listing. */
 router.get('/reg', function(req, res, next) {
-    res.render('users/reg', { title: 'jrForum', api: UsersApiUrl, navBar });
+    res.render('users/reg', { title: config.title, api: UsersApiUrl, navBar });
 });
 
 /* GET self page */
@@ -44,7 +45,7 @@ router.get('/userpage/:id', function(req, res, next) {
         res.end();
         return;
     }
-    res.render('users/self', { title: 'jrForum', user: user[0] });
+    res.render('users/self', { title: config.title, user: user[0] });
 })
 
 module.exports = router;
