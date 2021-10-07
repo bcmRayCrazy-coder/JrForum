@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 var postsRouter = require('./routes/posts');
 var thirdPartyRouter = require('./routes/third_party');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 app.use('/posts', postsRouter);
 app.use('/third_party', thirdPartyRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

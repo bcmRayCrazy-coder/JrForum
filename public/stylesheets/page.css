@@ -1,7 +1,8 @@
 body {
     background-color: rgb(31, 29, 29);
-    color: black;
+    color: white;
 }
+
 
 /* h1 {
     text-align: center;
@@ -16,7 +17,7 @@ div.descriptions {
     color: white;
 }
 
-p.mainContent{
+p.mainContent {
     color: white;
     position: absolute;
     top: auto;

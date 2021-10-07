@@ -7,6 +7,9 @@ module.exports = {
     // 论坛描述
     description: "A forum dev by bcmray_crazy and ItzJerry",
 
+    // 管理员id
+    admins: [0],
+
     // 默认配置
     default: {
 

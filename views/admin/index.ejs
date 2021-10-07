@@ -8,6 +8,13 @@
     <title>管理员后台
         <%= title %>
     </title>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script src="Chart.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/admin.css">
 </head>
 
 <body>
@@ -17,6 +24,9 @@
     <p class="subtitle">欢迎管理员-
         <%= userData.nickname %>
     </p>
+    <div class="visitor">
+        <canvas id="visitorChart" width="400" height="400"></canvas>
+    </div>
 </body>
 
 </html>
