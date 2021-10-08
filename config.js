@@ -8,14 +8,27 @@ module.exports = {
     description: "A forum dev by bcmray_crazy and ItzJerry",
 
     // 管理员id
-    admins: [0],
+    admins: [0, 1],
 
     // 默认配置
     default: {
 
-        // 管理员配置
+        // 管理员配置    目前被加入的管理员：ItzJerry, Admin
         user: {
-
+            nickname: "itzjerry",
+            id: 1,
+            password: "gdyb21LQTcIANtvYMT7QVQ==",
+            descript: "对方还没有设置简介呢",
+            owns: {
+                coin: 0,
+                level: 1,
+                arch: [
+                    0
+                ],
+                
+                avator_url: "/images/users/id_1_avatar.png"
+            },
+        
             // 昵称
             nickname: "admin",
 
@@ -74,5 +87,6 @@ module.exports = {
             },
             reply: []
         }
+        
     }
 }
