@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
         }
     }
     if (config.admins.includes(userData.id)) {
-        res.render('admin/index', { title: config.title, userData })
+        res.render('admin/index', { title: config.title, userData, details: { visitorNum: api.getVisitorNumber() } })
     } else {
         res.redirect('/home');
     }

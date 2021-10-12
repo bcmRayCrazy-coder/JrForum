@@ -102,6 +102,15 @@ var setUserAvatar = (id, img) => {
         return { err: err, avatarUrl };
     });
 }
+var addVisitor = () => {
+    var v = JSON.parse(fs.readFileSync(__dirname + '/serverDatas.json'));
+    v.visitors += 1;
+    fs.writeFileSync(__dirname + '/serverDatas.json', JSON.stringify(v, null, 4));
+}
+var getVisitorNumber = () => {
+    var v = JSON.parse(fs.readFileSync(__dirname + '/serverDatas.json'));
+    return v.visitors;
+}
 module.exports = {
     getUsers,
     getPosts,
@@ -111,5 +120,7 @@ module.exports = {
     signVer,
     replyPost,
     setUserAvatar,
+    addVisitor,
+    getVisitorNumber,
     md5
 }

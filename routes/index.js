@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
+    api.addVisitor();
     var session = req.session;
     var userData = { login: false };
     var showL = 'display:none;';
