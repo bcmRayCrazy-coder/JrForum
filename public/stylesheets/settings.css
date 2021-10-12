@@ -10,3 +10,17 @@ body {
 #imagealt {
     color: white;
 }
+
+a {
+    color: white;
+}
+
+#title {
+    text-align: center;
+}
+
+#back {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+}

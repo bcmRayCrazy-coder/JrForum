@@ -8,6 +8,5 @@ To visit our forum: [click here](http://itzjerry.top:233/)
 --
 访问我们的论坛: [点击这里](http://itzjerry.top:233/)
 JrForum是一个论坛社区。正在开发中。  
-
 by
 Itzjerry and bcmRayCrazy-coder

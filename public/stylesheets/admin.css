@@ -12,3 +12,17 @@ body {
     text-align: center;
     color: #BBBBBB;
 }
+
+#visitorChart {
+    position: absolute;
+    left: 100px;
+}
+
+h5 {
+    text-align: center;
+}
+
+a {
+    color: white;
+    position:absolute;
+}
