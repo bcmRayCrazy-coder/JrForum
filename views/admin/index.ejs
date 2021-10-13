@@ -14,9 +14,14 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
 
-    <script src="Chart.js"></script>
-
     <link rel="stylesheet" href="/stylesheets/admin.css">
+
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
 </head>
 
 <body>
@@ -28,20 +33,31 @@
         <%= userData.nickname %>
     </p>
     <div class="mdui-divider-light"></div>
+    <div class="easyui-tabs" style="width:1000px;height:800px;">
+        <div title="服务器信息" style="padding:10px;">
+            <h4>·服务器访问量信息</h4>
+            <p>
+                <%= details.visitorNum %>
+            </p>
+        </div>
+        <div title="管理内容" style="padding:10px;">
+            <h5>·管理内容</h5>
+            <h4>·帖子管理</h4>
+            <p>[等待接口接入]</p>
+            <h4>·回复管理</h4>
+            <p>[等待接口接入]</p>
+        </div>
+        <div title="用户" style="padding:10px;">
+            <h4>·头衔管理</h4>
+            <p>[等待接口接入]</p>
+        </div>
+    </div>
     <div class="visitor">
         <!-- <canvas id="visitorChart" width="400" height="400"></canvas> -->
         <!-- 这边把canvas注释掉了 如果你自己要用自己把他取消 我是不知道你搞这个canvas干嘛-->
-        <h5>·管理内容</h5>
-        <h4>·帖子管理</h4>
-        <p>[等待接口接入]</p>
-        <h4>·回复管理</h4>
-        <p>[等待接口接入]</p>
-        <h4>·头衔管理</h4>
-        <p>[等待接口接入]</p>
-        <h4>·服务器访问量信息</h4>
-        <p>
-            <%= details.visitorNum %>
-        </p>
+
+
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
 </body>
