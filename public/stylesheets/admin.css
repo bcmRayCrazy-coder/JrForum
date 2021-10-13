@@ -24,5 +24,13 @@ h5 {
 
 a {
     color: white;
-    position:absolute;
+    position: absolute;
+}
+
+.panel-body {
+    background: #f0f0f0;
+}
+
+.panel-header {
+    background: #fff url('images/panel_header_bg.gif') no-repeat top right;
 }
